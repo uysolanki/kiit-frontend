@@ -1,0 +1,18 @@
+#primary-button{
+ background-color: RGB(2, 117, 216);   
+ border: 1px solid white;
+ color:white;
+ font-size: 1rem;  /*1rem==16px*/
+ padding: 0.375rem .75rem;
+ line-height: 1.5;
+ border-radius: 2px;
+ font-weight: normal;
+ text-align: center;
+ vertical-align: middle;
+ text-decoration: none;
+}
+#primary-button:hover{
+    cursor: pointer;
+    background-color: RGB(23, 125, 216);
+    border-color: RGB(209, 185, 255);
+}
