@@ -20,5 +20,10 @@ function addition3()
 }
 
 
-addition3([])
+//addition3([])
+console.log('test')
+if(undefined)
+    console.log('true')
+else
+    console.log(false)
 
