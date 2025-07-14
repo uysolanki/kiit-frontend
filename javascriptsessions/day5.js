@@ -44,3 +44,4 @@ console.log(y)
 
 console.log(Boolean(""))
 console.log(Boolean(test()))
+
