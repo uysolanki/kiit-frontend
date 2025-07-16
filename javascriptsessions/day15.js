@@ -75,3 +75,4 @@ Array.from(allInputHavingTypeAttribute).forEach(
             heading.style.border='1px solid red'
     }
 )
+
