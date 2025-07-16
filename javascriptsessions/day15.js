@@ -42,3 +42,36 @@ Array.from(myHeadingElements).forEach(
     }
 )
 
+
+// const allHeadingElement=document.getElementsByTagName('h1')
+const allHeadingElement=document.querySelectorAll('h1')
+console.log(allHeadingElement)
+
+const allIndianCities=document.querySelectorAll('.country h1')
+console.log(allIndianCities.length)
+
+Array.from(allIndianCities).forEach(
+    (heading)=>{
+            heading.style.backgroundColor='red'
+    }
+)
+
+
+const allDirectChildCitiesOfCountryClass=document.querySelectorAll('.country > h1')
+console.log(allIndianCities.length)
+
+Array.from(allDirectChildCitiesOfCountryClass).forEach(
+    (heading)=>{
+            heading.style.backgroundColor='green'
+    }
+)
+
+
+const allInputHavingTypeAttribute=document.querySelectorAll('input[type=submit]')
+console.log(allInputHavingTypeAttribute.length)
+
+Array.from(allInputHavingTypeAttribute).forEach(
+    (heading)=>{
+            heading.style.border='1px solid red'
+    }
+)
