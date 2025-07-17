@@ -1,5 +1,7 @@
  
-    let score={
+    let score=JSON.parse(localStorage.getItem('myScore'))
+    ||
+    {
         won:0,
         tie:0,
         lost:0
@@ -56,7 +58,8 @@ function playGame(playerMove)
         case 'Tie' : score.tie++; break;
     }
 
-    scoreParaElement.innerHTML=`Won : ${score.won}  Lost : ${score.lost}   Tie : ${score.tie}`
+    localStorage.setItem('myScore',JSON.stringify(score));
+    displayScoreboard()
 }
 
 
@@ -73,5 +76,20 @@ function generateComputerMove()
     return 'Scissors'
 }
 
+function resetScore()
+{
+    localStorage.removeItem('myScore')
+    score={
+        won:0,
+        tie:0,
+        lost:0
+    }
+    displayScoreboard()
+}
 
-//display result on the webpage score is an object
+function displayScoreboard()
+{
+    scoreParaElement.innerHTML=`Won : ${score.won}  Lost : ${score.lost}   Tie : ${score.tie}`
+}
+
+//implemented Local storage

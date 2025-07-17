@@ -1,5 +1,7 @@
  
-    let score={
+    let score=JSON.parse(localStorage.getItem('myScore'))
+    ||
+    {
         won:0,
         tie:0,
         lost:0
@@ -9,6 +11,19 @@
    var resultParaElement=document.querySelector('#result-para') 
    var scoreParaElement=document.querySelector('#score-para') 
 
+
+   var rockButtonElement=document.querySelector('#rock-button').addEventListener('click',()=>playGame('Rock'))
+   var paperButtonElement=document.querySelector('#paper-button') 
+   var scissorsButtonElement=document.querySelector('#scissors-button') 
+   var resetButtonElement=document.querySelector('#reset-button') 
+   var autoplayButtonElement=document.querySelector('#autoplay-button') 
+
+   //rockButtonElement.addEventListener('click',()=>playGame('Rock'))
+   paperButtonElement.addEventListener('click',()=>playGame('Paper'))
+   scissorsButtonElement.addEventListener('click',()=>playGame('Scissors'))
+   resetButtonElement.addEventListener('click',resetScore)
+   autoplayButtonElement.addEventListener('click', autoPlayMode)
+   autoplayButtonElement.style.backgroundColor="red"
 function playGame(playerMove)
 {
    
@@ -56,7 +71,8 @@ function playGame(playerMove)
         case 'Tie' : score.tie++; break;
     }
 
-    scoreParaElement.innerHTML=`Won : ${score.won}  Lost : ${score.lost}   Tie : ${score.tie}`
+    localStorage.setItem('myScore',JSON.stringify(score));
+    displayScoreboard()
 }
 
 
@@ -73,5 +89,41 @@ function generateComputerMove()
     return 'Scissors'
 }
 
+function resetScore()
+{
+    localStorage.removeItem('myScore')
+    score={
+        won:0,
+        tie:0,
+        lost:0
+    }
+    displayScoreboard()
+}
 
-//display result on the webpage score is an object
+function displayScoreboard()
+{
+    scoreParaElement.innerHTML=`Won : ${score.won}  Lost : ${score.lost}   Tie : ${score.tie}`
+}
+
+var intervalId
+var autoplayStatus=false
+function autoPlayMode()
+{
+    const playerMove=generateComputerMove();
+    
+    if(autoplayStatus==false)
+    {
+    intervalId= setInterval(()=> playGame(playerMove),2000)
+    autoplayStatus=true;
+    autoplayButtonElement.style.backgroundColor="green"
+    }
+    else
+    {
+        clearInterval(intervalId)
+        autoplayStatus=false;
+        autoplayButtonElement.style.backgroundColor="red"
+    }
+   
+}
+
+//implemented event handler on the play buttons
