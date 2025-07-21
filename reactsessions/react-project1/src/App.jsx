@@ -4,13 +4,14 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Test from './components/Test'
 import Counter from './components/Counter'
+import Homepage from './components/Homepage'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <Counter/>
+     <Homepage/>
     </>
   )
 }
