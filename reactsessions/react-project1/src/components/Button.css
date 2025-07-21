@@ -1,3 +1,14 @@
 .red{
     background-color: red;
+    font-size: 20px;
+    color: yellow;
+    border: 1px solid black;
+}
+
+
+.green{
+    background-color: green;
+    font-size: 30px;
+    color: blue;
+    border: 5px solid black;
 }
