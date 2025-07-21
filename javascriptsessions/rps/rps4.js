@@ -103,4 +103,4 @@ function displayScoreboard()
     scoreParaElement.innerHTML=`Won : ${score.won}  Lost : ${score.lost}   Tie : ${score.tie}`
 }
 
-//implemented Local storage
+//implemented event handler on the play buttons
