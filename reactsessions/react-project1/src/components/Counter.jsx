@@ -35,10 +35,10 @@ const Counter = () => {
     <button onClick={decrementBy2}>DecrementBy2</button> */}
 
 
-    <Button text="Increment" handleClick={increment}/>
-    <Button text="Decrement" handleClick={decrement}/>
-    <Button text="IncrementBy2" handleClick={incrementBy2}/>
-    <Button text="DecrementBy2" handleClick={decrementBy2}/>
+    <Button text="Increment" handleClick={increment} color='red'/>
+    <Button text="Decrement" handleClick={decrement} color='blue'/>
+    <Button text="IncrementBy2" handleClick={incrementBy2} color='green'/>
+    <Button text="DecrementBy2" handleClick={decrementBy2} color='yellow'/>
     <p>{count}</p>
     </>
   )
