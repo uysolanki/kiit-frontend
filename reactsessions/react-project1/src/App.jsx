@@ -5,13 +5,14 @@ import './App.css'
 import Test from './components/Test'
 import Counter from './components/Counter'
 import Homepage from './components/Homepage'
+import ProductsPage from './components/ProductsPage'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <Homepage/>
+     <ProductsPage/>
     </>
   )
 }
