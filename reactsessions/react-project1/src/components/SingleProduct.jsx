@@ -18,6 +18,7 @@ const SingleProduct = () => {
     const rawData= await axios.get(`https://fakestoreapi.com/products/${id}`)
     console.log(rawData)
     setProduct(rawData.data)
+    console.log(product)
     }
     catch(error)
     {
