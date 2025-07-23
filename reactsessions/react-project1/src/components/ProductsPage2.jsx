@@ -7,9 +7,9 @@ const ProductsPage2 = () => {
   useEffect(
     ()=>{
         loadDataFromFakeStoreServer()
-    },[]
-  )
-    
+    },[]    //dependency Array    //[] execute the code within the useeffect only once at component load time
+  )                               //[count,count1,product] execute the code within the useeffect everytime any of the state mention is modified
+                                  //, dont provide the dependency array, execute the code within the useeffect everytime any of the state is modified
   async function loadDataFromFakeStoreServer()
   {
     try{

@@ -8,13 +8,22 @@ import Homepage from './components/Homepage'
 import ProductsPage from './components/ProductsPage'
 import ProductsPage1 from './components/ProductsPage1'
 import ProductsPage2 from './components/ProductsPage2'
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <ProductsPage2/>
+     <Router>
+
+            <Routes>
+                  <Route path="/" element={<Homepage/>} />
+                  <Route path="/products" element={<ProductsPage2/>} />
+                  <Route path="/counter" element={<Counter/>} />
+            </Routes>
+     </Router>
+
+
     </>
   )
 }
