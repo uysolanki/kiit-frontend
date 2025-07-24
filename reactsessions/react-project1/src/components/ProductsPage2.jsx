@@ -15,7 +15,7 @@ const ProductsPage2 = () => {
   async function loadDataFromFakeStoreServer()
   {
     try{
-    const rawData= await axios.get('https://fakestoreapi.com/products')
+    const rawData= await axios.get('http://localhost:8087/products/getAllProducts')
     console.log(rawData)
     setMyproducts(rawData.data)
     setBuproducts(rawData.data)

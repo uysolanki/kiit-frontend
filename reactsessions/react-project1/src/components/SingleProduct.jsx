@@ -13,7 +13,7 @@ const SingleProduct = () => {
 
   async function loadDataFromFakeStoreServer() {
     try {
-      const rawData = await axios.get(`https://fakestoreapi.com/products/${id}`);
+      const rawData = await axios.get(`http://localhost:8087/products/${id}`);
       setProduct(rawData.data);
     } catch (error) {
       console.log(error);
