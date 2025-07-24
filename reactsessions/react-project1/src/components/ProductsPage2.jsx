@@ -30,7 +30,7 @@ const ProductsPage2 = () => {
   const[buproducts,setBuproducts]=useState([])
     console.log(myproducts)
 
-  const productCategories=myproducts.map(
+  const productCategories=buproducts.map(
     (product)=>{
           return product.category
     }
@@ -49,7 +49,7 @@ const ProductsPage2 = () => {
   {
         if(categoryValue!='All')
         {
-        const filteredProducts=myproducts.filter(
+        const filteredProducts=buproducts.filter(
           (product)=>{
             return product.category===categoryValue
           }
@@ -69,7 +69,7 @@ const ProductsPage2 = () => {
       setMyproducts(buproducts)
     else
     {
-    const searchedProducts=myproducts.filter(
+    const searchedProducts=buproducts.filter(
       (product)=>
       {
         return product.title.toLowerCase().includes(value.toLowerCase())
