@@ -23,6 +23,7 @@ function App() {
                   <Route path="/products" element={<ProductsPage2/>} />
                   <Route path="/counter" element={<Counter/>} />
                   <Route path="/single/:id"  element={<SingleProduct/>} />
+                  <Route path="/test"  element={<Test/>} />
             </Routes>
      </Router>
 

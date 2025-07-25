@@ -1,34 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 //import products from '../data/products.js'
 import axios from 'axios';
 import ProductCard from './ProductCard';
 import CategoryBar from './CategoryBar';
 import SearchBox from './SearchBox';
+import ProductContext from '../context/ProductContext';
 const ProductsPage2 = () => {
 
-  useEffect(
-    ()=>{
-        loadDataFromFakeStoreServer()
-    },[]    //dependency Array    //[] execute the code within the useeffect only once at component load time
-  )                               //[count,count1,product] execute the code within the useeffect everytime any of the state mention is modified
-                                  //, dont provide the dependency array, execute the code within the useeffect everytime any of the state is modified
-  async function loadDataFromFakeStoreServer()
-  {
-    try{
-    const rawData= await axios.get('http://localhost:8087/products/getAllProducts')
-    console.log(rawData)
-    setMyproducts(rawData.data)
-    setBuproducts(rawData.data)
-    }
-    catch(error)
-    {
-      console.log(error)
-    }
-  }
+  const {products}=useContext(ProductContext)
   
-  const[myproducts,setMyproducts]=useState([])
-  const[buproducts,setBuproducts]=useState([])
-    console.log(myproducts)
+  console.log(products)
+  
+  const[myproducts,setMyproducts]=useState(products)
+  const[buproducts,setBuproducts]=useState(products)
+  
+  console.log(myproducts)
 
   const productCategories=buproducts.map(
     (product)=>{
