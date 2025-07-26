@@ -11,6 +11,7 @@ import ProductsPage2 from './components/ProductsPage2'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar'
 import SingleProduct from './components/SingleProduct'
+import Addproduct from './components/Addproduct'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -23,7 +24,7 @@ function App() {
                   <Route path="/products" element={<ProductsPage2/>} />
                   <Route path="/counter" element={<Counter/>} />
                   <Route path="/single/:id"  element={<SingleProduct/>} />
-                  <Route path="/test"  element={<Test/>} />
+                  <Route path="/addproduct"  element={<Addproduct/>} />
             </Routes>
      </Router>
 
