@@ -5,7 +5,9 @@ import ProductCard from './ProductCard';
 import CategoryBar from './CategoryBar';
 import SearchBox from './SearchBox';
 import ProductContext from '../context/ProductContext';
+import Breadcrumbs from './Breadcrumbs';
 const ProductsPage2 = () => {
+
 
   const {products}=useContext(ProductContext)
   

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import ProductContext from '../context/ProductContext';
+import Breadcrumbs from './Breadcrumbs';
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -19,8 +20,12 @@ const SingleProduct = () => {
     <>
       {
         product ? (
-          <ProductCard product={product} />
-        ) : (
+          <>
+          <Breadcrumbs product={product}/>
+          <ProductCard product={product} /> 
+          </>   
+        ) 
+        : (
           <div className="text-center mt-5">Loading product details...</div>
         )
       }

@@ -12,7 +12,9 @@ const ProductCard = ({product}) => {
               <h5 className="card-title">{product.title.substring(0, 30)}</h5>
               <p className="card-text">{product.description.substring(0, 50)}</p>
               <p className="card-text"><strong>Category:</strong> {product.category}</p>
-              <p className="card-text"><strong>Rating:</strong> {product.rating.rate}</p>
+              <p className="card-text">
+              <strong>Rating:</strong> {product.rating?.rate ?? 'N/A'}
+              </p>
               <div className="mt-auto d-flex justify-content-between">
                 <a href="#" className="btn btn-primary">Add To Cart</a>
                 <a href="#" className="btn btn-secondary">Wishlist</a>
