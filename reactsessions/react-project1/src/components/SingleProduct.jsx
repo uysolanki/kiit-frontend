@@ -21,7 +21,7 @@ const SingleProduct = () => {
       {
         product ? (
           <>
-          <Breadcrumbs product={product}/>
+          <Breadcrumbs product={product} />
           <ProductCard product={product} /> 
           </>   
         ) 
