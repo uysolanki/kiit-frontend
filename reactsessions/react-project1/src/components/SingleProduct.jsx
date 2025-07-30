@@ -25,7 +25,8 @@ const SingleProduct = () => {
           <ProductCard product={product} /> 
           </>   
         ) 
-        : (
+        : 
+        (
           <div className="text-center mt-5">Loading product details...</div>
         )
       }
